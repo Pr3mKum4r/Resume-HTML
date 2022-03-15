@@ -1,0 +1,33 @@
+body{
+  background-color:#0a1e61;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding: 20px;
+}
+
+h1{
+    text-align: center;
+}
+
+span{
+    position: relative;
+    color: rgb(0, 255, 234);
+    text-shadow: 2px 2px 8px #00ffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+}
+
+span:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    height: 5px;
+    border-radius: 2px;
+    background: linear-gradient(130deg,#18f7ff,#d802fd 41.07%,#147cdd 76.05%);
+}
