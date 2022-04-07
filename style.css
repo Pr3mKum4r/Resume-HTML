@@ -1,7 +1,9 @@
-body{
-  background-color:#0a1e61;
+body {
+  background-color: #0a1e61;
 }
 img {
+  position: relative;
+  z-index: 1;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -11,25 +13,107 @@ img {
   -moz-box-shadow: -10px 11px 5px 0px rgb(1, 255, 255);
 }
 
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
 
-span{
-    position: relative;
-    color: rgb(0, 255, 234);
-    text-shadow: 2px 2px 8px #00ffff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 50px;
+span {
+  position: relative;
+  color: rgb(0, 255, 234);
+  text-shadow: 2px 2px 8px #00ffff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 50px;
 }
 
 span:before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    left: 0;
-    height: 5px;
-    border-radius: 2px;
-    background: linear-gradient(130deg,#18f7ff,#d802fd 41.07%,#147cdd 76.05%);
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  height: 5px;
+  border-radius: 2px;
+  background: linear-gradient(130deg, #18f7ff, #d802fd 41.07%, #147cdd 76.05%);
+}
+
+.container-fluid{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #FFF;
+}
+
+.background {
+  background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+  background-size: 400% 400%;
+  animation: Gradient 15s ease infinite;
+  position: relative;
+  /* height: 100vh;
+  width: 100%; */
+  overflow: hidden;
+  padding:0;
+  margin:0px;
+}
+.cube {
+  position: absolute;
+  z-index: 0;
+  top: 200vh;
+  left: 91vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #D7D4E4;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: cube 12s ease-in forwards infinite;
+}
+.cube:nth-child(2n) {
+  border-color: #FFF ;
+}
+.cube:nth-child(2) {
+  animation-delay: 2s;
+  left: 8vw;
+  top: 250vh;
+}
+.cube:nth-child(3) {
+  animation-delay: 4s;
+  left: 88vw;
+  top: 67vh;
+}
+.cube:nth-child(4) {
+  animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+.cube:nth-child(5) {
+  animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.cube:nth-child(6) {
+  animation-delay: 10s;
+  left: 90vw;
+  bottom: 10vh;
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
 }
